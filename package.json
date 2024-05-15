@@ -1,0 +1,16 @@
+{
+  "name": "testing-components",
+  "version": "1.0.0",
+  "main": "./components/pages/index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./components/tailwindcss/input.css -o ./components/tailwindcss/output.css --watch",
+    "start": "live-server components"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

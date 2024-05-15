@@ -1,0 +1,68 @@
+I'm trying to implement the following mobile-first functionality: In smartphone screens, 
+the only nav a shown is the current's page one, while others are hidden, 
+just being displayed (as a vertical list) when I hover the #menu button. 
+How do I implement that with tailwindcss?
+
+-----------
+<header class="bg-indigo-400 p-4 flex items-center gap-3">
+        <img class="h-10 w-10 rounded-2xl" src="./img/perfil.jpeg" alt="">
+        <nav class="hidden items-center gap-3 sm:flex">
+            <a href="#" class="text-indigo-50 hover:text-white">Home</a>
+            <a href="#" class="text-indigo-50 hover:text-white">Cliente</a>
+            <a href="#" class="text-indigo-50 hover:text-white">Orçamento</a>
+            <a href="#" class="text-indigo-50 hover:text-white">Etapas</a>
+            <a href="#" class="text-indigo-50 hover:text-white">BDI</a>
+            <a href="#" class="text-indigo-50 hover:text-white">Bases</a>
+        </nav>
+        <button id="menu" class="md:hidden">
+            <img class="h-10 w-10" src="./img/menu-dots-svgrepo-com.svg" alt="Menu" class="h-6 w-6">
+        </button>
+    </header>
+-----------
+
+
+Suggested follow up questions:
+To implement the desired mobile-first functionality with Tailwind CSS, you can use a combination of Tailwind's utility classes and JavaScript. Here's how you can approach it:
+
+1 - First, create a new div element that will hold the vertical list of navigation links. This div should be initially hidden on all screen sizes.
+
+<div id="mobileNav" class="hidden">
+    <!-- Vertical list of navigation links -->
+</div>
+
+2 - Inside the mobileNav div, add the navigation links as a list or individual links.
+
+<div id="mobileNav" class="hidden">
+    <a href="#" class="block py-2 text-indigo-50 hover:text-white">Home</a>
+    <a href="#" class="block py-2 text-indigo-50 hover:text-white">Cliente</a>
+    <!-- Add the rest of the navigation links -->
+</div>
+
+3 - Now, use JavaScript to toggle the visibility of the mobileNav div when the 
+#menu button is clicked. You can add an event listener to the button and toggle the 
+hidden class on the mobileNav div.
+
+const menuBtn = document.getElementById('menu');
+const mobileNav = document.getElementById('mobileNav');
+
+menuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+});
+
+4 - To hide the mobileNav div on larger screens, you can use Tailwind's responsive utility classes. Add the 
+md:hidden class to the mobileNav div to hide it on screens larger than the "md" breakpoint (768px by default).
+
+<div id="mobileNav" class="hidden md:hidden">
+    <!-- Vertical list of navigation links -->
+</div>
+
+5 - Finally, you can style the mobileNav div to achieve the desired vertical list appearance. 
+For example, you can add some padding, background color, and box-shadow.
+
+<div id="mobileNav" class="hidden md:hidden bg-indigo-400 p-4 rounded-lg shadow-md">
+    <!-- Vertical list of navigation links -->
+</div>
+
+With this approach, the navigation links will be displayed horizontally on 
+larger screens and as a vertical list on smaller screens when the 
+#menu button is clicked. You can further customize the styles and behavior as needed.
