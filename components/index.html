@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/tailwindcss/output.css">
+    <script src="./js/index.js" type="module"></script>
+</head>
+<body class="bg-indigo-100">
+    <header class="bg-indigo-400 p-4 flex items-center justify-between">
+        <img class="h-10 w-10 rounded-2xl" src="./assets/img/perfil.jpeg" alt="">
+        <nav class="items-center gap-3">
+            <a id="home-tab" href="/" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium tab-focus current-page">Home</a>
+            <a id="client-tab" href="/cliente" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium">Cliente</a>
+            <a id="budget-tab" href="/orcamento" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium">Orçamento</a>
+            <a id="stages-tab" href="/etapas" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium">Etapas</a>
+            <a id="bdi-tab" href="/bdi" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium">BDI</a>
+            <a id="bases-tab" href="/bases" onclick="route()" class="px-2 text-base text-indigo-50 hover:text-white hover:font-medium">Bases</a>
+        </nav>
+        <div id="" class="h-10 w-10 rounded-2xl hidden sm:flex"></div>
+        
+        <button id="menu" class="md:hidden bg-indigo-300 rounded-2xl block">
+            <img class="h-10 w-10 rounded-2xl" src="./assets/img/menu-dots-svgrepo-com.svg" alt="Menu">
+        </button>
+        
+        <div id="mobile-nav" class="absolute flex flex-col gap-3 right-2 top-24 z-10 hidden">
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150 hidden">Home</button>
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150">Cliente</button>
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150">Orçamento</button>
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150">Etapas</button>
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150">BDI</button>
+            <button class="px-2 text-base bg-indigo-400 hover:bg-indigo-500 rounded-xl drop-shadow-md text-indigo-50 hover:saturate-150">Bases</button>
+        </div>
+    </header>
+
+    <div id="app"></div>
+</body>
+</html>

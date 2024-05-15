@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 700px) {
+    nav a:not(.current-page) {
+        display: none;
+        
+    }
+}
+
+@media (min-width: 700px) and (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+}
+
+.tab-focus {
+    font-weight: bold;
+    color: white;
+}
+
+/* .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+} */
+
+/* nav a:not(current-page){
+    display: none;
+} */
