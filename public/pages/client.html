@@ -1,0 +1,133 @@
+<div id="client">
+    <div class="container mx-auto p-4">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="obra">
+                    Obra
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="obra" type="text" placeholder="Nome da obra">
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
+                    Nome
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nome" type="text" placeholder="Seu nome">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="telefone">
+                    Telefone
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="telefone" type="tel" placeholder="(00) 00000-0000">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="endereco-cliente">
+                    Endereço do Cliente
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="endereco-cliente" rows="3" maxlength="150" placeholder="Endereço do cliente"></textarea>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="endereco-obra">
+                    Endereço da Obra
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="endereco-obra" rows="3" maxlength="150" placeholder="Endereço da obra"></textarea>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="cidade">
+                    Cidade
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cidade" type="text" placeholder="Cidade">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="estado">
+                    Estado
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="estado">
+                    <option value="">Selecione o estado</option>
+                    <!-- Add all 27 states of Brazil here -->
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="email@exemplo.com">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="tipo-obra">
+                    Tipo de obra
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tipo-obra" type="text" placeholder="Tipo de obra">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="previsao-inicio">
+                    Previsão para início da obra
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="previsao-inicio" type="text" placeholder="DD/MM/YYYY">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="area-projetada">
+                    Área projetada (m²)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="area-projetada" type="number" placeholder="Área projetada (m²)">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="area-construida">
+                    Área construída (m²)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="area-construida" type="number" placeholder="Área construída (m²)">
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="area-terreno">
+                    Área do terreno (m²)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="area-terreno" type="number" placeholder="Área do terreno (m²)">
+            </div>
+    
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+    
+</div>

@@ -18,3 +18,4 @@ menuBtn.addEventListener('click', () => {
     mobileNav.classList.toggle('hidden')
     menuBtn.classList.toggle('scale-110')
 })
+

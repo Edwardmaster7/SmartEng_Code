@@ -5,4 +5,5 @@ uvicorn
 fastapi
 ipykernel
 flask
+flask_cors
 plotly

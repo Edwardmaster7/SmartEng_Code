@@ -19,8 +19,6 @@ export class Router {
         router.add('/bdi', '/pages/bdi.html')
         router.add('/bases', '/pages/bases.html')
         router.add(404, '/pages/404.html')
-
-        this.#handle()
     }
 
     add(routeName, page) {
@@ -49,38 +47,45 @@ export class Router {
         fetch(route)
         .then((data) => data.text())
         .then(html => document.querySelector('#app').innerHTML = html)
+        .then(script => this.#handle())
     
         // console.log(`Rota depois do fetch: ${route}`)
         this.tabSwitch.switchTab()
     }
 
     #handle() {
-    // Get the current URL path
-    const { pathname } = window.location
-    const path = this.routes[pathname]
+        // Get the current URL path
+        const { pathname } = window.location;
+        const path = this.routes[pathname];
 
-    // Check if the path is '/cliente'
-    if (path === '/cliente') {
-    // Fetch the client page content
-        fetch('/pages/index.html')
-        .then(response => response.text())
-        .then(html => {
-        // Insert the fetched HTML into the #app div
-        document.getElementById('app').innerHTML = html;
-        })
-        .catch(error => console.error('Error fetching client page:', error));
-     }// else {
-    // // Handle other routes or load the default content
-    //     fetch('/index.html')
-    //     .then(response => response.text())
-    //     .then(html => {
-    //     // Insert the fetched HTML into the #app div
-    //     document.getElementById('app').innerHTML = html;
-    //     })
-    //     .catch(error => console.error('Error fetching index page:', error));
-    // }
+        console.log(`path: ${path}`);
 
+        switch (pathname) {
+            case '/':
+                // Fetch the home page content
+                console.log(`Fetching home page content...`);
+                fetch('http://127.0.0.1:5000/plot')
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const imageUrl = URL.createObjectURL(blob);
+                        const imageContainer = document.getElementById('plot-container');
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        imageContainer.appendChild(img);
+                    })
+                    .catch(error => console.error('Error:', error));
+                break;
+            // Add more cases for other routes here
+            default:
+                // Handle unknown routes or do nothing
+                break;
+        }
     }
+
 }
+
+
+
+
 
 
