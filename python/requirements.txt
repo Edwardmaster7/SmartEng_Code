@@ -4,3 +4,5 @@ pandas
 uvicorn
 fastapi
 ipykernel
+flask
+plotly

@@ -10,7 +10,7 @@ export class Router {
         this.tabSwitch.getActualTab()
         const actualTab = this.tabSwitch.tab
         
-        console.log(`actual tab: ${actualTab}`)
+        // console.log(`actual tab: ${actualTab}`)
 
         router.add('/', '/pages/home.html')
         router.add('/cliente', '/pages/client.html')
@@ -26,8 +26,8 @@ export class Router {
     add(routeName, page) {
 
         this.routes[routeName] = page
-        console.log(`page: ${page}`)
-        console.log(this.routes)
+        // console.log(`page: ${page}`)
+        // console.log(this.routes)
     }
 
     route(event) {
@@ -45,12 +45,12 @@ export class Router {
         const { pathname } = window.location
         const route = this.routes[pathname]
 
-        console.log(`Rota antes do fetch: ${route}`)
+        // console.log(`Rota antes do fetch: ${route}`)
         fetch(route)
         .then((data) => data.text())
         .then(html => document.querySelector('#app').innerHTML = html)
     
-        console.log(`Rota depois do fetch: ${route}`)
+        // console.log(`Rota depois do fetch: ${route}`)
         this.tabSwitch.switchTab()
     }
 
