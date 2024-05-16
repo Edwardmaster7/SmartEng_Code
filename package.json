@@ -1,18 +1,21 @@
 {
-  "name": "testing-components",
+  "name": "smart-eng",
   "version": "1.0.0",
-  "main": "./components/pages/index.js",
+  "main": "./components/js/index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./public/tailwindcss/input.css -o ./public/tailwindcss/output.css --watch",
-    "start": "live-server public",
+    "build": "npx tailwindcss -i ./public/tailwindcss/input.css -o ./public/tailwindcss/output.css --watch > /dev/null 2>&1",
+    "start": "npm run build & npm run python",
+    "live-server": "live-server public",
     "format": "prettier --write .",
     "lint": "eslint .",
+    "nodemon": "nodemon server.js",
+    "python": "source ./python/venv/bin/activate && python3 ./python/app.py",
     "postinstall": "npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eduardo Oliveira Batista",
   "license": "ISC",
-  "description": "",
+  "description": "Web application for managing civil engineering project's budget.",
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "eslint": "^8.20.0",

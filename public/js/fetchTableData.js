@@ -1,7 +1,7 @@
 export async function fetchTableData() {
     try {
-        const response = await fetch('/data');
-        const tableData = await response;
+        const response = await fetch('http://127.0.0.1:5000/data');
+        const tableData = await response.json();
         
         console.log(`response: ${response} \n tableData: ${tableData}`)
 
