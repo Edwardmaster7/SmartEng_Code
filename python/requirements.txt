@@ -7,3 +7,5 @@ ipykernel
 flask
 flask_cors
 plotly
+ipython
+nbformat>=4.2.0

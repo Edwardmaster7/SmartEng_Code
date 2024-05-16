@@ -1,3 +1,5 @@
+// import { fetchTableData } from "./fetchTableData"
+
 export class Router {
     
     constructor(tabSwitch) {
@@ -76,6 +78,14 @@ export class Router {
                     })
                     .catch(error => console.error('Error:', error));
                 break;
+            
+            case '/orcamento':
+                // Fetch the budget page content
+                console.log(`Fetching budget page content...`);
+                
+                console.log(fetchTableContent())
+                    
+                
             // Add more cases for other routes here
             default:
                 // Handle unknown routes or do nothing

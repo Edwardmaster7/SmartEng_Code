@@ -4,30 +4,40 @@ import matplotlib
 matplotlib.use('Agg')  # Use a non-interactive backend
 import matplotlib.pyplot as plt
 import io
-from flask import render_template
+from flask import jsonify, render_template
 
-import plotly.graph_objs as go
-from flask import Flask, jsonify, render_template
+# Generate plot data
+data = [1, 2, 3, 4, 5]
 
-# Create a sample plot
-fig = go.Figure(data=[go.Scatter(x=[1, 2, 3], y=[4, 5, 6])])
+# Create a figure and plot the data
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(data)
 
-# Convert plot to HTML/JavaScript
-plot_div = fig.to_html(full_html=False)
+# Define the table data
+table_data = [
+    ['Product', 'Price', 'Quantity'],
+    ['Apple', 0.75, 10],
+    ['Orange', 0.50, 15],
+    ['Banana', 0.25, 20],
+    ['Kiwi', 1.00, 8]
+]
 
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/plot')
+@app.route('/plot/svg', methods=['GET'])
+def plot_svg():
+    # Convert plot to PNG image
+    pngImage = io.BytesIO()
+    fig.savefig(pngImage, format='svg')
+    pngImage.seek(0)
+
+    # Return the PNG image
+    return Response(pngImage.getvalue(), mimetype='image/svg')
+
+@app.route('/plot', methods=['GET'])
 def plot_png():
-    # Generate plot data
-    data = [1, 2, 3, 4, 5]
-
-    # Create a figure and plot the data
-    fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(data)
-
     # Convert plot to PNG image
     pngImage = io.BytesIO()
     fig.savefig(pngImage, format='png')
@@ -39,13 +49,11 @@ def plot_png():
 
 @app.route('/')
 def index():
-    return render_template('index.html', plot_div=plot_div)
+    return render_template('index.html')
 
-
-@app.route('/json')
-def get_plot():
-
-    return jsonify({'plot': plot_div})
+@app.route('/data', methods=['GET'])
+def get_table():
+    return jsonify(table_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
