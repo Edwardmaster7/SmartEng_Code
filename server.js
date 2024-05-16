@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 
+console.log('just got inside server.js')
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,6 +15,7 @@ app.get('/data', async (req, res) => {
     try {
         const response = await axios.get('http://127.0.0.1:5000/data');
         res.json(response.data);
+        console.log(`response: ${response}`)
     } catch (error) {
         res.status(500).send('Error fetching data');
     }

@@ -4,7 +4,7 @@
   "main": "./components/pages/index.js",
   "scripts": {
     "build": "npx tailwindcss -i ./public/tailwindcss/input.css -o ./public/tailwindcss/output.css --watch",
-    "start": "live-server public server.js",
+    "start": "live-server public",
     "format": "prettier --write .",
     "lint": "eslint .",
     "postinstall": "npm run build"

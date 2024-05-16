@@ -1,7 +1,9 @@
 export async function fetchTableData() {
     try {
         const response = await fetch('/data');
-        const tableData = await response.json();
+        const tableData = await response;
+        
+        console.log(`response: ${response} \n tableData: ${tableData}`)
 
         const container = document.getElementById('table-container');
         const table = document.createElement('table');

@@ -1,4 +1,4 @@
-// import { fetchTableData } from "./fetchTableData"
+import { fetchTableData } from "./fetchTableData.js"
 
 export class Router {
     
@@ -82,8 +82,9 @@ export class Router {
             case '/orcamento':
                 // Fetch the budget page content
                 console.log(`Fetching budget page content...`);
-                
-                console.log(fetchTableContent())
+                const tableData = fetchTableData();
+
+                tableData   
                     
                 
             // Add more cases for other routes here
