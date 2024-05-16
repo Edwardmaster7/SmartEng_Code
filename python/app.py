@@ -6,6 +6,16 @@ import matplotlib.pyplot as plt
 import io
 from flask import render_template
 
+import plotly.graph_objs as go
+from flask import Flask, jsonify, render_template
+
+# Create a sample plot
+fig = go.Figure(data=[go.Scatter(x=[1, 2, 3], y=[4, 5, 6])])
+
+# Convert plot to HTML/JavaScript
+plot_div = fig.to_html(full_html=False)
+
+
 app = Flask(__name__)
 CORS(app)
 
@@ -26,9 +36,16 @@ def plot_png():
     # Return the PNG image
     return Response(pngImage.getvalue(), mimetype='image/png')
 
+
 @app.route('/')
 def index():
-    return 'hi'
+    return render_template('index.html', plot_div=plot_div)
+
+
+@app.route('/json')
+def get_plot():
+
+    return jsonify({'plot': plot_div})
 
 if __name__ == '__main__':
     app.run(debug=True)
