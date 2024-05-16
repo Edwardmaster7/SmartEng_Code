@@ -19,3 +19,10 @@ menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('scale-110')
 })
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     const mobileNavButtons = document.querySelectorAll('#mobile-nav button');
+//     const navA = document.querySelectorAll('nav a');
+//     mobileNavButtons.forEach(button => {
+//       button.addEventListener('click', route);
+//     });
+//   });

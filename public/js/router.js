@@ -41,15 +41,16 @@ export class Router {
     handle() {
         // const pathname = window.location.pathname
         const { pathname } = window.location
+        console.log(`pathname: ${pathname}`)
         const route = this.routes[pathname]
 
-        // console.log(`Rota antes do fetch: ${route}`)
+        console.log(`Rota antes do fetch: ${route}`)
         fetch(route)
         .then((data) => data.text())
         .then(html => document.querySelector('#app').innerHTML = html)
-        .then(script => this.#handleExternalContent())
+        .then(() => this.#handleExternalContent())
     
-        // console.log(`Rota depois do fetch: ${route}`)
+        console.log(`Rota depois do fetch: ${route}`)
         this.tabSwitch.switchTab()
     }
 
