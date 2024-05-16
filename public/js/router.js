@@ -47,13 +47,13 @@ export class Router {
         fetch(route)
         .then((data) => data.text())
         .then(html => document.querySelector('#app').innerHTML = html)
-        .then(script => this.#handle())
+        .then(script => this.#handleExternalContent())
     
         // console.log(`Rota depois do fetch: ${route}`)
         this.tabSwitch.switchTab()
     }
 
-    #handle() {
+    #handleExternalContent() {
         // Get the current URL path
         const { pathname } = window.location;
         const path = this.routes[pathname];

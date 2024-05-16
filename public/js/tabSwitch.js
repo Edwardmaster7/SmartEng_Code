@@ -28,34 +28,14 @@ export class TabSwitch{
             return
         } else if(this.oldtab !== this.tab) {
                 document.querySelector(`#${this.oldtab}-tab`).classList.remove('tab-focus')
+                document.querySelector(`#${this.oldtab}-tab`).classList.remove('current-page')
+                document.querySelector(`#${this.oldtab}-button`).classList.remove('hidden')
+
                 document.querySelector(`#${this.tab}-tab`).classList.add('tab-focus')
-                // this.#switchBackground()
+                document.querySelector(`#${this.tab}-tab`).classList.add('current-page')
+                document.querySelector(`#${this.tab}-button`).classList.add('hidden')
+
         }
     }
     
-    // #switchBackground() {
-    //     if(this.oldtab === undefined) {
-    //         return
-    //     } else if(this.oldtab !== this.tab){
-    //         switch(this.tab){
-    //             case 'home':
-    //                 document.querySelector('body').classList.remove(`${this.oldbackground}`);
-    //                 document.querySelector('body').classList.add('background1');
-    //                 this.oldbackground = 'background1'
-    //                 break;
-    //             case 'universe':
-    //                 document.querySelector('body').classList.remove(`${this.oldbackground}`);
-    //                 document.querySelector('body').classList.add('background2');
-    //                 this.oldbackground = 'background2'
-    //                 break;
-    //             case 'exploration':
-    //                 document.querySelector('body').classList.remove(`${this.oldbackground}`);
-    //                 document.querySelector('body').classList.add('background3');
-    //                 this.oldbackground = 'background3'
-    //                 break;
-    //             default:
-    //                 return
-    //         }
-    //     }
-    // }
 }
