@@ -4,6 +4,8 @@ import { TabSwitch } from './tabSwitch.js'
 const tabSwitch = new TabSwitch()
 const router = new Router(tabSwitch)
 
+tabSwitch.init()
+
 router.setup(router)
 
 router.handle()

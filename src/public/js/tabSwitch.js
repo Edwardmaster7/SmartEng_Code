@@ -37,5 +37,9 @@ export class TabSwitch{
 
         }
     }
+
+    init() {
+        this.switchTab()
+    }
     
 }
