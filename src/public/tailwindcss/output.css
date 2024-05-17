@@ -806,7 +806,7 @@ video {
 }
 
 @media (max-width: 700px) {
-  nav a:not(.current-page) {
+  nav a:not(.tab-focus) {
     display: none;
   }
 }

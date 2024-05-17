@@ -28,18 +28,21 @@ export class TabSwitch{
             return
         } else if(this.oldtab !== this.tab) {
                 document.querySelector(`#${this.oldtab}-tab`).classList.remove('tab-focus')
-                document.querySelector(`#${this.oldtab}-tab`).classList.remove('current-page')
+                // document.querySelector(`#${this.oldtab}-tab`).classList.remove('current-page')
                 document.querySelector(`#${this.oldtab}-button`).classList.remove('hidden')
 
                 document.querySelector(`#${this.tab}-tab`).classList.add('tab-focus')
-                document.querySelector(`#${this.tab}-tab`).classList.add('current-page')
+                // document.querySelector(`#${this.tab}-tab`).classList.add('current-page')
                 document.querySelector(`#${this.tab}-button`).classList.add('hidden')
 
         }
     }
 
     init() {
-        this.switchTab()
+        this.getActualTab()
+        document.querySelector(`#${this.tab}-tab`).classList.add('tab-focus')
+        // document.querySelector(`#${this.tab}-tab`).classList.add('current-page')
+        document.querySelector(`#${this.tab}-button`).classList.add('hidden')
     }
     
 }

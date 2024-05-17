@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "./components/js/index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./public/tailwindcss/input.css -o ./public/tailwindcss/output.css --watch > /dev/null 2>&1",
+    "build": "npx tailwindcss -i ./src/public/tailwindcss/input.css -o ./src/public/tailwindcss/output.css --watch > /dev/null 2>&1",
     "start": "npm run build & npm run python & node ./src/server.js",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "nodemon": "nodemon server.js",
+    "buildpython": "cd ./python/ && python3 -m venv venv && source ./venv/bin/activate && pip3 install -r ./requirements.txt",
     "python": "source ./python/venv/bin/activate && python3 ./python/app.py",
-    "postinstall": "npm run build",
+    "postinstall": "npm run build && npm run buildpython",
     "clearcache": "npm cache clean --force"
   },
   "keywords": [],
