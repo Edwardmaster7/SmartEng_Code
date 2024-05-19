@@ -1,7 +1,7 @@
 SET UP:
  1 - Install node.js from https://nodejs.org/dist/v20.13.1/node-v20.13.1.pkg
  2 - Install python 3
- 2 - Run > npm install
+ 3 - Run > npm install
     * to get out from the tailwind build (last step on this script), once "Done", tipe ctr+C, or close the terminal instance.
- 3 - Run > npm start
- 4 - Access localhost:3000
+ 4 - Run > npm start
+ 5 - Access localhost:3000
